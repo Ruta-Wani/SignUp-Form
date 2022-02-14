@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>SignUp Form</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="center1">
+<h2> Sign Up</h2>
+<p class="left">
+<form method="post" name="myform" onsubmit="one()">
+<input type="text" placeholder="First Name" name="fname"><br><br>
+<input type="text" placeholder="Middle Name" name="mname"><br><br>
+<input type="text" placeholder="Last Name" name="lname"><br><br>
+<input type="text" placeholder="Contact" name="number"><br><br>
+<input type="text" placeholder="Username/Email" name="username"><br><br>
+<input type="password" placeholder="Password" name="password"><br><br>
+<button type="submit"><a style="color:white;">Register</a></button>
+</form>
+</div>
+<script>
+function one()
+{
+var fname = document.myform.fname.value ; 
+var mname = document.myform.mname.value ;
+var lname = document.myform.lname.value ; 
+var number = document.myform.number.value ; 
+var username = document.myform.username.value ; 
+var password = document.myform.password.value ;
+if (fname == "nulll" || fname == "")
+{
+alert("First Name can't be blank")
+}
+else if (mname == "nulll" || mname == "")
+{
+alert("Middle Name can't be blank")
+}
+else if (lname == "nulll" || lname == "")
+{
+alert("Last Name can't be blank")
+}
+else if (username == "nulll" || username == "")
+{
+alert("Username can't be blank")
+}
+else if (password == "nulll" || password == "")
+{
+alert("Password can't be blank")
+}
+else if (password.length<8 || password.length>15 )
+{
+alert("Password must conatin 8 - 15 characters")
+}
+else if (number == "nulll" || number == "")
+{
+alert("Mobile number can't be blank")
+}
+else if (number.length!=10)
+{
+alert("Mobile number should contain 10 digits")
+}
+var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+if (username.match(validRegex))
+{
+    document.form1.text1.focus();
+    return true;
+} 
+else
+{
+    alert("Invalid Username/Email address!");
+    document.form1.text1.focus();
+    return false;
+}
+} 
+</script>
+</body>
+</html>
